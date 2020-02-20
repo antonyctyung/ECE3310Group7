@@ -1,0 +1,9 @@
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\StackInheritanceTest.exe
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\StackInheritanceTest.pdb
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\LinkedListLibrary.dll
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\StackInheritanceLibrary.dll
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\LinkedListLibrary.pdb
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\bin\Debug\StackInheritanceLibrary.pdb
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\obj\Debug\StackInheritanceTest.csprojResolveAssemblyReference.cache
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\obj\Debug\StackInheritanceTest.exe
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_14\StackInheritanceTest\StackInheritanceTest\obj\Debug\StackInheritanceTest.pdb

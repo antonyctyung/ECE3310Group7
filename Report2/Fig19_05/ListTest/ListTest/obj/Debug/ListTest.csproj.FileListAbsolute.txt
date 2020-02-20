@@ -1,0 +1,7 @@
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\bin\Debug\ListTest.exe
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\bin\Debug\ListTest.pdb
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\bin\Debug\LinkedListLibrary.dll
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\bin\Debug\LinkedListLibrary.pdb
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\obj\Debug\ListTest.csprojResolveAssemblyReference.cache
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\obj\Debug\ListTest.exe
+C:\books\2012\VCSHARP2012HTP\examples\ch19\Fig19_05\ListTest\ListTest\obj\Debug\ListTest.pdb
