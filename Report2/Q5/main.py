@@ -1,4 +1,4 @@
-# ECE 3310 Group 7 Report 2 Question 5 
+# ECE 3310 Group 7 Report 2 Question 3-5 in Python 
 # Author: Choi Tim Antony Yung
 
 class LinkedListNode:
