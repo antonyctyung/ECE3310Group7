@@ -539,6 +539,18 @@ class CircularDoublyLinkedList(DoublyLinkedList):
                 current.next = newNode  
         return
 
+class Stack(LinkedList):
+    _classname = 'Stack'
+    
+    def __init__(self):
+        super().__init__()
+    
+    def Push(self,dataValue):
+        self.InsertAtFront(dataValue)
+    
+    def Pop(self):
+        return self.RemoveFromFront()
+
 if __name__ == '__main__':
     
     lst = LinkedList()
@@ -713,3 +725,26 @@ if __name__ == '__main__':
     print('First node\'s previous node have value of %1d'% (lst.firstNode.prev.data))
     
     print('')
+    
+    print('New empty stack')
+    stak = Stack()
+    aBoolean = True
+    aCharacter = '$'
+    anInteger = 34567
+    aString = "hello"
+    
+    stak.Push( aBoolean );
+    print(stak)
+    stak.Push( aCharacter );
+    print(stak)
+    stak.Push( anInteger );
+    print(stak)
+    stak.Push( aString );
+    print(stak)
+    
+    try:
+        while(True):
+            removedObject = stak.Pop()
+            print(str(removedObject) + ' popped')
+    except IndexError as err:
+        print(err)
