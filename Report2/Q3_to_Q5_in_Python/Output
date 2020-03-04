@@ -94,5 +94,15 @@ CircularDoublyLinkedList: [ 1 , 2 , 3 , 5 , 6 ]
 Last node's next node have value of 1
 First node's previous node have value of 6
 
+New empty stack
+Stack: [ True ]
+Stack: [ $ , True ]
+Stack: [ 34567 , $ , True ]
+Stack: [ hello , 34567 , $ , True ]
+hello popped
+34567 popped
+$ popped
+True popped
+Attempting to remove from an empty list.
 
 
