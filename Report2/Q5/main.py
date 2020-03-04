@@ -62,6 +62,31 @@ class LinkedList:
     def isEmpty(self):
         return self._firstNode == None
     
+    def count(self):
+        if self.isEmpty():
+            return 0
+        counter = 1
+        current = self._firstNode
+        while current is not self._lastNode:
+            nextNode = current.next
+            current = nextNode
+            counter = counter + 1
+        return counter
+
+    def search(self,key):
+        if self.isEmpty():
+            return None
+        counter = 0
+        current = self._firstNode
+        while current is not self._lastNode and current.data != key:
+            nextNode = current.next
+            current = nextNode
+            counter = counter + 1
+        if current.data == key: 
+            return counter
+        return None
+
+
     def InsertAtFront(self,insertItem):
         if self.isEmpty():
             self._firstNode = LinkedListNode(insertItem)
@@ -240,6 +265,30 @@ class DoublyLinkedList:
 
     def isEmpty(self):
         return self._firstNode == None
+    
+    def count(self):
+        if self.isEmpty():
+            return 0
+        counter = 1
+        current = self._firstNode
+        while current is not self._lastNode:
+            nextNode = current.next
+            current = nextNode
+            counter = counter + 1
+        return counter
+
+    def search(self,key):
+        if self.isEmpty():
+            return None
+        counter = 0
+        current = self._firstNode
+        while current is not self._lastNode and current.data != key:
+            nextNode = current.next
+            current = nextNode
+            counter = counter + 1
+        if current.data == key: 
+            return counter
+        return None
     
     def InsertAtFront(self,insertItem):
         if self.isEmpty():
