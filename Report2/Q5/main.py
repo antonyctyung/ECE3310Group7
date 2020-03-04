@@ -120,6 +120,7 @@ class LinkedList:
         else:
             current = self._firstNode
             while idx > 1:
+                if (current is self.)
                 nextNode = current.next
                 current = nextNode
                 idx = idx - 1
