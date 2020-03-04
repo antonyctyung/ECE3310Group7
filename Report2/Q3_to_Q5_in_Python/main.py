@@ -27,7 +27,7 @@ class LinkedListNode:
 
 class DoublyLinkedListNode(LinkedListNode):
     def __init__(self,data,next=None,prev=None):
-        super.__init__(self,data,next)
+        super().__init__(data,next)
         self._prev = prev
     
     @property
@@ -39,10 +39,15 @@ class DoublyLinkedListNode(LinkedListNode):
         self._prev = prev
 
 class LinkedList:
+    _classname = 'LinkedList'
     def __init__(self):
         self._firstNode = None
         self._lastNode = None
 
+    @property
+    def classname(self):
+        return self._classname
+        
     @property
     def firstNode(self):
         return self._firstNode
@@ -86,6 +91,18 @@ class LinkedList:
             return counter
         return None
 
+    def __str__(self):
+        retstr = self._classname + ': ['
+        if self.isEmpty():
+            retstr = ' ' + retstr + ' ]'
+            return retstr
+        current = self._firstNode
+        while current is not self._lastNode:
+            retstr = retstr + ' '+ str(current) +' ,'
+            nextNode = current.next
+            current = nextNode
+        retstr = retstr + ' ' + str(current) + ' ]'
+        return retstr
 
     def InsertAtFront(self,insertItem):
         if self.isEmpty():
@@ -158,10 +175,34 @@ class LinkedList:
                 newNode = LinkedListNode(insertItem,current.next)
                 current.next = newNode
         return
+    
+    def removeInTheMiddle(self, idx):
+        if self.isEmpty():
+            raise IndexError('Attempting to remove from empty list')
+        if idx <= 0:
+            self.RemoveFromFront()
+            return
+        else:
+            current = self._firstNode
+            while idx > 1:
+                if current.next == None:
+                    raise IndexError('Attempting to insert at index out of bound')
+                nextNode = current.next
+                current = nextNode
+                idx = idx - 1
+            # variable current is now the one before the one at idx
+            if current.next is self._lastNode:
+                self.RemoveFromBack(insertItem)
+                return
+            else:
+                current.next = current.next.next
+        return
 
 class CircularLinkedList(LinkedList):
+    _classname = "CircularLinkedList"
+    
     def __init__(self):
-        super.__init__(self)
+        super().__init__()
     
     def isEmpty(self):
         return self._firstNode == None
@@ -243,9 +284,14 @@ class CircularLinkedList(LinkedList):
         return
 
 class DoublyLinkedList:
+    _classname = 'DoublyLinkedList'
     def __init__(self):
         self._firstNode = None
         self._lastNode = None
+
+    @property
+    def classname(self):
+        return self._classname
 
     @property
     def firstNode(self):
@@ -289,6 +335,19 @@ class DoublyLinkedList:
         if current.data == key: 
             return counter
         return None
+    
+    def __str__(self):
+        retstr = self._classname + ': ['
+        if self.isEmpty():
+            retstr = ' ' + retstr + ' ]'
+            return retstr
+        current = self._firstNode
+        while current is not self._lastNode:
+            retstr = retstr + ' '+ str(current) +' ,'
+            nextNode = current.next
+            current = nextNode
+        retstr = retstr + ' ' + str(current) + ' ]'
+        return retstr
     
     def InsertAtFront(self,insertItem):
         if self.isEmpty():
@@ -365,10 +424,35 @@ class DoublyLinkedList:
                 current.next = newNode
                 
         return
+    
+    def removeInTheMiddle(self, idx):
+        if self.isEmpty():
+            raise IndexError('Attempting to remove from empty list')
+        if idx <= 0:
+            self.RemoveFromFront()
+            return
+        else:
+            current = self._firstNode
+            while idx > 1:
+                if current.next == None:
+                    raise IndexError('Attempting to insert at index out of bound')
+                nextNode = current.next
+                current = nextNode
+                idx = idx - 1
+            # variable current is now the one before the one at idx
+            if current.next is self._lastNode:
+                self.RemoveFromBack(insertItem)
+                return
+            else:
+                current.next = current.next.next
+                current.next.prev = current
+        return
+
 
 class CircularDoublyLinkedList(DoublyLinkedList):
+    _classname = 'CircularDoublyLinkedList'
     def __init__(self):
-        super.__init__(self)
+        super().__init__()
 
     def isEmpty(self):
         return self._firstNode == None
@@ -456,4 +540,176 @@ class CircularDoublyLinkedList(DoublyLinkedList):
         return
 
 if __name__ == '__main__':
-    pass
+    
+    lst = LinkedList()
+    print('New empty linked list')
+    print(lst)
+    
+    print('Inserting 0 at front')
+    lst.InsertAtFront(0)
+    print(lst)
+    
+    print('Inserting 2 at back')
+    lst.InsertAtBack(2)
+    print(lst)
+    
+    print('Inserting 1 at index 1')
+    lst.InsertInTheMiddle(1,1)
+    print(lst)
+    
+    print('Inserting 3 to 7 at back')
+    for i in range(3,8):
+        lst.InsertAtBack(i)
+        print (lst)
+    
+    print('1 is at index %1d'% (lst.search(1)))
+    
+    print('The list have a length of %1d'% (lst.count()))
+    
+    print('Removing from front')
+    lst.RemoveFromFront()
+    print(lst)
+    
+    print('Removing from back')
+    lst.RemoveFromBack()
+    print(lst)
+    
+    print('Removing at index 3')
+    lst.removeInTheMiddle(3)
+    print(lst)
+    
+    print('')
+    
+    
+    
+    
+    lst = CircularLinkedList()
+    print('New empty circular linked list')
+    print(lst)
+    
+    print('Inserting 0 at front')
+    lst.InsertAtFront(0)
+    print(lst)
+    
+    print('Inserting 2 at back')
+    lst.InsertAtBack(2)
+    print(lst)
+    
+    print('Inserting 1 at index 1')
+    lst.InsertInTheMiddle(1,1)
+    print(lst)
+    
+    print('Inserting 3 to 7 at back')
+    for i in range(3,8):
+        lst.InsertAtBack(i)
+        print (lst)
+    
+    print('1 is at index %1d'% (lst.search(1)))
+    
+    print('The list have a length of %1d'% (lst.count()))
+    
+    print('Removing from front')
+    lst.RemoveFromFront()
+    print(lst)
+    
+    print('Removing from back')
+    lst.RemoveFromBack()
+    print(lst)
+    
+    print('Removing at index 3')
+    lst.removeInTheMiddle(3)
+    print(lst)    
+    
+    print('Last node\'s next node have value of %1d'% (lst.lastNode.next.data))
+    
+    print('')
+    
+    
+
+    
+    lst = DoublyLinkedList()
+    print('New empty doubly linked list')
+    print(lst)
+    
+    print('Inserting 0 at front')
+    lst.InsertAtFront(0)
+    print(lst)
+    
+    print('Inserting 2 at back')
+    lst.InsertAtBack(2)
+    print(lst)
+    
+    print('Inserting 1 at index 1')
+    lst.InsertInTheMiddle(1,1)
+    print(lst)
+    
+    print('Inserting 3 to 7 at back')
+    for i in range(3,8):
+        lst.InsertAtBack(i)
+        print (lst)
+    
+    print('1 is at index %1d'% (lst.search(1)))
+    
+    print('The list have a length of %1d'% (lst.count()))
+    
+    print('Removing from front')
+    lst.RemoveFromFront()
+    print(lst)
+    
+    print('Removing from back')
+    lst.RemoveFromBack()
+    print(lst)
+    
+    print('Last node\'s previous node have value of %1d'% (lst.lastNode.prev.data))
+
+    print('Removing at index 3')
+    lst.removeInTheMiddle(3)
+    print(lst)
+    
+    print('')
+    
+    
+    
+    
+    lst = CircularDoublyLinkedList()
+    print('New empty circular linked list')
+    print(lst)
+    
+    print('Inserting 0 at front')
+    lst.InsertAtFront(0)
+    print(lst)
+    
+    print('Inserting 2 at back')
+    lst.InsertAtBack(2)
+    print(lst)
+    
+    print('Inserting 1 at index 1')
+    lst.InsertInTheMiddle(1,1)
+    print(lst)
+    
+    print('Inserting 3 to 7 at back')
+    for i in range(3,8):
+        lst.InsertAtBack(i)
+        print (lst)
+    
+    print('1 is at index %1d'% (lst.search(1)))
+    
+    print('The list have a length of %1d'% (lst.count()))
+    
+    print('Removing from front')
+    lst.RemoveFromFront()
+    print(lst)
+    
+    print('Removing from back')
+    lst.RemoveFromBack()
+    print(lst)
+    
+    print('Removing at index 3')
+    lst.removeInTheMiddle(3)
+    print(lst)    
+    
+    print('Last node\'s next node have value of %1d'% (lst.lastNode.next.data))
+    
+    print('First node\'s previous node have value of %1d'% (lst.firstNode.prev.data))
+    
+    print('')
