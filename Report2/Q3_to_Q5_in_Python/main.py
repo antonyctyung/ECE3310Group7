@@ -6,7 +6,7 @@ class LinkedListNode:
         self._data = data
         self._next = next
 
-    @property
+    @property 
     def data(self):
         return self._data
 
