@@ -192,7 +192,7 @@ class LinkedList:
                 idx = idx - 1
             # variable current is now the one before the one at idx
             if current.next is self._lastNode:
-                self.RemoveFromBack(insertItem)
+                self.RemoveFromBack()
                 return
             else:
                 current.next = current.next.next
@@ -441,7 +441,7 @@ class DoublyLinkedList:
                 idx = idx - 1
             # variable current is now the one before the one at idx
             if current.next is self._lastNode:
-                self.RemoveFromBack(insertItem)
+                self.RemoveFromBack()
                 return
             else:
                 current.next = current.next.next
